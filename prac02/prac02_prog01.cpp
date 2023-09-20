@@ -7,45 +7,53 @@
 using namespace std;
 
 namespace HR {
+    /*
+     * Used enum class as they represent a fixed set of values, where each value has a distinct identity.
+     */
+    enum class jobTitle {
+        manager, seniorEngineer, engineer
+    };
+
     // Create and populate an employee
     struct Employee {
         char firstInitial;
         char lastInitial;
         int employeeNumber;
         int salary;
+        jobTitle title;
     };
-    /*
-     * Used enum class as they represent a fixed set of values, where each value has a distinct identity.
-     */
-    enum class jobTitle {manager, seniorEngineer, engineer};
+}
+
+void display_job_title(HR::jobTitle title) {
+    switch (title) {
+        using namespace HR;
+        case jobTitle::manager:
+            cout << "Manager" << endl;
+            break;
+        case jobTitle::seniorEngineer:
+            cout << "Senior Engineer" << endl;
+            break;
+        case jobTitle::engineer:
+            cout << "Engineer" << endl;
+            break;
+    }
 }
 
 int main() {
     // Create and populate an employee
-    HR::Employee anEmployee{};
-    HR::jobTitle title;
+    using namespace HR;
+    Employee anEmployee{};
 
     // Assign employee values
     anEmployee.firstInitial = 'J';
     anEmployee.lastInitial = 'D';
     anEmployee.employeeNumber = 42;
     anEmployee.salary = 80000;
-    title = HR::jobTitle::manager;
+    anEmployee.title = jobTitle::manager;
 
     // Output the values of an employee
     cout << "Employee: " << anEmployee.firstInitial << anEmployee.lastInitial << endl;
     cout << "Number: " << anEmployee.employeeNumber << endl;
     cout << "Salary: $" << anEmployee.salary << endl;
-
-    switch (title) {
-        case HR::jobTitle::manager:
-            cout << "Manager" << endl;
-            break;
-        case HR::jobTitle::seniorEngineer:
-            cout << "Senior Engineer" << endl;
-            break;
-        case HR::jobTitle::engineer:
-            cout << "Engineer" << endl;
-            break;
-    }
+    display_job_title(anEmployee.title);
 }
