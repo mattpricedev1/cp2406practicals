@@ -5,14 +5,17 @@
 
 using namespace std;
 
+// Create and populate an employee
+struct Employee {
+    char firstInitial;
+    char lastInitial;
+    int employeeNumber;
+    int salary;
+};
+
 int main() {
     // Create and populate an employee
-    struct {
-        char firstInitial;
-        char lastInitial;
-        int employeeNumber;
-        int salary;
-    } anEmployee{};
+    Employee anEmployee;
 
     // Assign employee values
     anEmployee.firstInitial = 'J';
