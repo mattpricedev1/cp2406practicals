@@ -14,12 +14,15 @@ namespace HR {
         int employeeNumber;
         int salary;
     };
+    /*
+     * Used enum class as they represent a fixed set of values, where each value has a distinct identity.
+     */
     enum class jobTitle {manager, seniorEngineer, engineer};
 }
 
 int main() {
     // Create and populate an employee
-    HR::Employee anEmployee;
+    HR::Employee anEmployee{};
     HR::jobTitle title;
 
     // Assign employee values
