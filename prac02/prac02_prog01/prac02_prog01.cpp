@@ -1,32 +1,32 @@
 //
 // Created by Matthew Price on 20/9/2023.
 //
-import<iostream>;
-import<format>;
-import employee;
+#include <iostream>
+#include <format>
+#include <string>
+//#include employee;
 
 using namespace std;
 
 int main() {
     // create and populate an employee
-    Employee anEmployee;
-    anEmployee.firstInitial = 'J';
-    anEmployee.lastInitial = 'D';
-    anEmployee.employeeNumber = 42;
-    anEmployee.salary = 80000;
+//    Employee anEmployee;
+    char firstInitial = 'J';
+    char lastInitial = 'D';
+    int employeeNumber = 42;
+    int salary = 80000;
 
     // output the values of an employee
-    cout << format("Employee: {}{}", anEmployee.firstInitial, anEmployee.lastInitial) << endl;
-    cout << format("Number: {}", anEmployee.employeeNumber) << endl;
-    cout << format("Salary: ${}", anEmployee.salary) << endl;
+    cout << "Employee: " << firstInitial << lastInitial << endl;
+    cout << "Number: " << employeeNumber << endl;
+    cout << "Salary: $" << salary << endl;
 }
 
-export module
-employee;
-
-export struct Employee {
-    char firstInitial;
-    char lastInitial;
-    int employeeNumber;
-    int salary;
-};
+//export module employee;
+//
+//export struct Employee {
+//    char firstInitial;
+//    char lastInitial;
+//    int employeeNumber;
+//    int salary;
+//};
