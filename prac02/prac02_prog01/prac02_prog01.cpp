@@ -2,31 +2,26 @@
 // Created by Matthew Price on 20/9/2023.
 //
 #include <iostream>
-#include <format>
-#include <string>
-//#include employee;
 
 using namespace std;
 
 int main() {
-    // create and populate an employee
-//    Employee anEmployee;
-    char firstInitial = 'J';
-    char lastInitial = 'D';
-    int employeeNumber = 42;
-    int salary = 80000;
+    // Create and populate an employee
+    struct {
+        char firstInitial;
+        char lastInitial;
+        int employeeNumber;
+        int salary;
+    } anEmployee{};
 
-    // output the values of an employee
-    cout << "Employee: " << firstInitial << lastInitial << endl;
-    cout << "Number: " << employeeNumber << endl;
-    cout << "Salary: $" << salary << endl;
+    // Assign employee values
+    anEmployee.firstInitial = 'J';
+    anEmployee.lastInitial = 'D';
+    anEmployee.employeeNumber = 42;
+    anEmployee.salary = 80000;
+
+    // Output the values of an employee
+    cout << "Employee: " << anEmployee.firstInitial << anEmployee.lastInitial << endl;
+    cout << "Number: " << anEmployee.employeeNumber << endl;
+    cout << "Salary: $" << anEmployee.salary << endl;
 }
-
-//export module employee;
-//
-//export struct Employee {
-//    char firstInitial;
-//    char lastInitial;
-//    int employeeNumber;
-//    int salary;
-//};
