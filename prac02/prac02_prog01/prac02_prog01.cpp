@@ -14,20 +14,35 @@ namespace HR {
         int employeeNumber;
         int salary;
     };
+    enum class jobTitle {manager, seniorEngineer, engineer};
 }
 
 int main() {
     // Create and populate an employee
     HR::Employee anEmployee;
+    HR::jobTitle title;
 
     // Assign employee values
     anEmployee.firstInitial = 'J';
     anEmployee.lastInitial = 'D';
     anEmployee.employeeNumber = 42;
     anEmployee.salary = 80000;
+    title = HR::jobTitle::manager;
 
     // Output the values of an employee
     cout << "Employee: " << anEmployee.firstInitial << anEmployee.lastInitial << endl;
     cout << "Number: " << anEmployee.employeeNumber << endl;
     cout << "Salary: $" << anEmployee.salary << endl;
+
+    switch (title) {
+        case HR::jobTitle::manager:
+            cout << "Manager" << endl;
+            break;
+        case HR::jobTitle::seniorEngineer:
+            cout << "Senior Engineer" << endl;
+            break;
+        case HR::jobTitle::engineer:
+            cout << "Engineer" << endl;
+            break;
+    }
 }
