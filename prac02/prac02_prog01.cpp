@@ -40,11 +40,11 @@ void display_job_title(HR::jobTitle title) {
 }
 
 int main() {
-    // Create and populate an employee
     using namespace HR;
+    // Create and populate an employee
     Employee anEmployee{};
 
-    // Assign employee values
+    // Assign an employee values
     anEmployee.firstInitial = 'J';
     anEmployee.lastInitial = 'D';
     anEmployee.employeeNumber = 42;
