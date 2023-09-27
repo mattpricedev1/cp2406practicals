@@ -9,7 +9,7 @@ using namespace std;
  *           - Unlike Python, the function 'findAndReplace' must be declared before main.
  *           - The function definition of 'findAndReplace' is written below main.
  */
-string findAndReplace(string haystack, string needle, string replaceWith);
+string findAndReplace(string haystack, const string& needle, const string& replaceWith);
 
 
 int main() {
@@ -27,9 +27,9 @@ int main() {
 
 }
 
-string findAndReplace(string haystack, string needle, string replaceWith) {
+string findAndReplace(string haystack, const string& needle, const string& replaceWith) {
     // Make a copy of haystack
-    string result = haystack;
+    string result = std::move(haystack);
 
     auto indexPosition(result.find(needle));
     if (indexPosition != string::npos) {
