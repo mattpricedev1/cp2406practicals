@@ -5,10 +5,6 @@
 
 using namespace std;
 
-/* TODO: Write a function with three parameters--the haystack, needle, and replacement string--that returns
- *       a copy of the haystack with all the needles replaced with the replacement string.
- */
-
 // Question: Why is  the following line here?
 string findAndReplace(string haystack, string needle, string replaceWith);
 
