@@ -9,20 +9,32 @@ using namespace std;
  *       a copy of the haystack with all the needles replaced with the replacement string.
  */
 
+// Question: Why is  the following line here?
 string findAndReplace(string haystack, string needle, string replaceWith);
 
 
 int main() {
 
-    string haystack{"aaabbbcojncuicb[u2b3]"};
-    string needle{"["};
+    string haystack{"THIS IS A TEST TEXT"};
+    string needle{"TEST"};
     string replaceWith{"???"};
 
     string result = findAndReplace(haystack, needle, replaceWith);
 
+    cout << "haystack: " << haystack << endl;
+    cout << "needle: " << needle << endl;
+    cout << "replaceWith: " << replaceWith << endl;
+    cout << "result: " << result << endl;
+
 }
 
 string findAndReplace(string haystack, string needle, string replaceWith) {
-    auto result{haystack};
+    // Make a copy of haystack
+    string result = haystack;
+
+    auto indexPosition(result.find(needle));
+    if(indexPosition != string::npos) {
+        result.replace(indexPosition, needle.length(), replaceWith);
+    }
     return result;
 }
